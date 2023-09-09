@@ -1,7 +1,7 @@
 #
 # Build stage
 #
-FROM maven:3.8.2-jdk-20 AS build
+FROM openjdk:20-jdk-slim AS build
 COPY . .
 RUN mvn clean package -DskipTests
 
