@@ -1,4 +1,5 @@
 FROM openjdk:20-jdk-slim
+WORKDIR /app
 COPY target/demo-0.0.1-SNAPSHOT.jar demo.jar
 # ENV PORT=8080
 EXPOSE 8080
