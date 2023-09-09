@@ -1,9 +1,9 @@
-FROM maven:3.8.3-openjdk:20-jdk-slim AS build
+FROM maven:3.8.3-openjdk:17 AS build
 WORKDIR /app
 COPY . /app/
 RUN mvn clean package
 
-FROM openjdk:20-jdk-slim
+FROM openjdk:17-alpine
 WORKDIR /app
 COPY /app/target/demo-0.0.1-SNAPSHOT.jar demo.jar
 # ENV PORT=8080
